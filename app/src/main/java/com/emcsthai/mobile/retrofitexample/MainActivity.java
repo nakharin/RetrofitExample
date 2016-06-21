@@ -15,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.emcsthai.mobile.retrofitexample.network.WebServiceManager;
+import com.emcsthai.mobile.retrofitexample.network.callback.UserCallbackListener;
+import com.emcsthai.mobile.retrofitexample.network.model.User;
 import com.squareup.okhttp.ResponseBody;
 
 import retrofit.Retrofit;

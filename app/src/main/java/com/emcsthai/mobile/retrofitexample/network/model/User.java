@@ -1,4 +1,4 @@
-package com.emcsthai.mobile.retrofitexample;
+package com.emcsthai.mobile.retrofitexample.network.model;
 
 import com.google.gson.annotations.Expose;
 

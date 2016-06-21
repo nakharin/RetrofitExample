@@ -1,4 +1,6 @@
-package com.emcsthai.mobile.retrofitexample;
+package com.emcsthai.mobile.retrofitexample.network;
+
+import com.emcsthai.mobile.retrofitexample.network.model.User;
 
 import retrofit.Call;
 import retrofit.http.GET;

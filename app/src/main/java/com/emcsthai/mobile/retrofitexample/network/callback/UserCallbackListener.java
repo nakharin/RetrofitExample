@@ -1,5 +1,6 @@
-package com.emcsthai.mobile.retrofitexample;
+package com.emcsthai.mobile.retrofitexample.network.callback;
 
+import com.emcsthai.mobile.retrofitexample.network.model.User;
 import com.squareup.okhttp.ResponseBody;
 
 import retrofit.Retrofit;
