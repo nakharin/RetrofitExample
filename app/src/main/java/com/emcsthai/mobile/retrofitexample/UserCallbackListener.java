@@ -7,7 +7,7 @@ import retrofit.Retrofit;
 /**
  * Created by nakharin on 6/21/16 AD.
  */
-public interface WebServiceCallbackListener {
+public interface UserCallbackListener {
     void onResponse(User user, Retrofit retrofit);
     void onBodyError(ResponseBody responseBodyError);
     void onBodyErrorIsNull();

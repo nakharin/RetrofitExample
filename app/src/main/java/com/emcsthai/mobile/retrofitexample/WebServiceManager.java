@@ -15,7 +15,7 @@ public class WebServiceManager {
 
     protected static final String BASE_URL = "https://api.github.com";
 
-    public static void getUser(String username, final WebServiceCallbackListener listener){
+    public static void getUser(String username, final UserCallbackListener listener) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -29,26 +29,28 @@ public class WebServiceManager {
             @Override
             public void onResponse(Response<User> response, Retrofit retrofit) {
                 User user = response.body();
-                if (user == null) {
-                    //404 or the response cannot be converted to User.
+                if (user != null) {
+                    // 200 OK
+                    listener.onResponse(user, retrofit);
+                } else {
+                    //404 Not found
                     ResponseBody responseBody = response.errorBody();
                     if (responseBody != null) {
+                        // Error
                         listener.onBodyError(responseBody);
                     } else {
+                        // Null
                         listener.onBodyErrorIsNull();
                     }
-                } else {
-                    //200
-                    listener.onResponse(user, retrofit);
                 }
             }
 
             @Override
             public void onFailure(Throwable t) {
+                // Failed
                 listener.onFailure(t);
             }
         });
-
     }
 }
 
