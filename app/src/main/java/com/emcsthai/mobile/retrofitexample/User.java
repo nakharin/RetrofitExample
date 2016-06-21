@@ -15,14 +15,21 @@ public class User {
     String company;
 
     public String getName() {
-        return name;
+        return isNull(name);
     }
 
     public String getBlog() {
-        return blog;
+        return isNull(blog);
     }
 
     public String getCompany() {
-        return company;
+        return isNull(company);
+    }
+
+    private String isNull(String str) {
+        if (str != null)
+            return str;
+        else
+            return "";
     }
 }
